@@ -6,7 +6,16 @@ namespace SquareSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            if (SquareTests.RunTests())
+            {
+                Console.WriteLine("Have errors!");
+            }
+            else
+            {
+                Console.WriteLine("All ok.");
+            }
+
+            Console.ReadKey();
         }
     }
 }

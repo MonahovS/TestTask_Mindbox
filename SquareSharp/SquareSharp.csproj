@@ -5,4 +5,14 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Elements\**" />
+    <EmbeddedResource Remove="Elements\**" />
+    <None Remove="Elements\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SquareLib\SquareLib.csproj" />
+  </ItemGroup>
+
 </Project>
