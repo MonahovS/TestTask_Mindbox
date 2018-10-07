@@ -79,7 +79,7 @@ namespace SquareLib.Elements
             var Sides = new List<double>() { SideA*SideA, SideB*SideB, SideC*SideC };
             Sides.Sort();
 
-            var d = Sides[3] - Sides[2] - Sides[1];
+            var d = Sides[2] - Sides[1] - Sides[0];
             if (Math.Abs(d) < VSMALL)
                 return true;
             else

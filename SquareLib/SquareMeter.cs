@@ -24,7 +24,7 @@ namespace SquareLib
         /// Расчет площади фигуры, если это возможно.
         /// </summary>
         /// <param name="outSquare">Площадь фигуры</param>
-        /// <returns>true - если фигура корректра и расчет успешен</returns>
+        /// <returns>true - если фигура корректна и расчет успешен</returns>
         public bool TryCalcSquare(out double outSquare)
         {
             try

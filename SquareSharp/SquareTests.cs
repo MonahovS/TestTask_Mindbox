@@ -242,22 +242,18 @@ namespace SquareSharp
         {
             try
             {                
-                double res;
-                bool b;
+                double res;               
 
                 var t1 = new Triangle { SideA = 0, SideB = 2, SideC = 2 };
-                b = t1.TryCalcSquare(out res);
-                if (b)
+                if (t1.TryCalcSquare(out res))                
                     return false;
 
                 var t2 = new Triangle { SideA = 2, SideB = 0, SideC = 2 };
-                b = t2.TryCalcSquare(out res);
-                if (b)
+                if (t2.TryCalcSquare(out res))                
                     return false;
 
                 var t3 = new Triangle { SideA = 2, SideB = 2, SideC = 0 };
-                b = t3.TryCalcSquare(out res);
-                if (b)
+                if (t3.TryCalcSquare(out res))                
                     return false;
 
                 return true;
@@ -293,22 +289,18 @@ namespace SquareSharp
         {
             try
             {
-                double res;
-                bool b;
+                double res;               
 
                 var t1 = new Triangle { SideA = -1, SideB = 2, SideC = 2 };
-                b = t1.TryCalcSquare(out res);
-                if (b)
+                if (t1.TryCalcSquare(out res))                
                     return false;
 
                 var t2 = new Triangle { SideA = 2, SideB = -1, SideC = 2 };
-                b = t2.TryCalcSquare(out res);
-                if (b)
+                if (t2.TryCalcSquare(out res))
                     return false;
 
                 var t3 = new Triangle { SideA = 2, SideB = 2, SideC = -1 };
-                b = t3.TryCalcSquare(out res);
-                if (b)
+                if (t3.TryCalcSquare(out res))                
                     return false;
 
                 return true;
@@ -338,13 +330,11 @@ namespace SquareSharp
         {
             try
             {
-                double res;
-                bool b;
-
                 var t1 = new Triangle { SideA = 1000, SideB = 100, SideC = 1 };
-                b = t1.TryCalcSquare(out res);
-                if (b)
-                    return false;                
+
+                double res;
+                if (t1.TryCalcSquare(out res))
+                    return false;
 
                 return true;
             }
@@ -358,15 +348,16 @@ namespace SquareSharp
         {
             try
             {
+                var t1 = new Triangle { SideA = 4, SideB = 2, SideC = 3 };
+
                 double res;
-                bool b;
+                if (!t1.TryCalcSquare(out res))
+                {
+                    return false;
+                }
 
-                var t1 = new Triangle { SideA = 1, SideB = 2, SideC = 3 };
-                b = t1.TryCalcSquare(out res);
-
-
-                double p = (1.0 + 2.0 + 3.0) / 2.0;
-                double RealRes = Math.Sqrt(p * (p - 1) * (p - 2) * (p - 3));
+                double p = (4.0 + 2.0 + 3.0) / 2.0;
+                double RealRes = Math.Sqrt(p * (p - 4) * (p - 2) * (p - 3));
 
                 bool result = Math.Abs(RealRes - res) < SquareMeter.VSMALL;
 
@@ -410,7 +401,7 @@ namespace SquareSharp
             }
             catch
             {
-                return true;
+                return false;
             }
         }
 
@@ -421,11 +412,11 @@ namespace SquareSharp
                 var t1 = new Triangle { SideA = 3, SideB = 5, SideC = 4 };
                 bool result = t1.IsRightAngled();
 
-                return !result;
+                return result;
             }
             catch
             {
-                return true;
+                return false;
             }
         }
 
